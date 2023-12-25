@@ -5,7 +5,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			if not vim.fn.has("win64") then
+			if vim.fn.has("win64") == 0 then
 				vim.g.hardhacker_darker = 0
 				-- if tilde==1, not display endofbuffer and nontext(this causes gitsigns.current_line_blame)
 				vim.g.hardhacker_hide_tilde = 1
@@ -30,7 +30,7 @@ return {
 		"Mofiqul/dracula.nvim",
 		priority = 1000,
 		config = function()
-			if vim.fn.has("win64") then
+			if vim.fn.has("win64") == 1 then
 				vim.cmd("colorscheme dracula")
 			end
 		end,

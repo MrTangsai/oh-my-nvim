@@ -87,14 +87,14 @@ vim.cmd([[
 -- modified by myself
 -- disable mouse
 -- vim.o.mousemodel = extend
-if vim.fn.has("win64") then
+if vim.fn.has("win64") == 1 then
 	vim.o.mouse = "a"
 else
 	vim.o.mouse = ""
 end
 
 -- get pwsh for win11 terminal
-if vim.fn.has("win64") then
+if vim.fn.has("win64") == 1 then
 	vim.cmd("let &shell = has('win32') ? 'powershell' : 'pwsh'")
 	vim.cmd(
 		"let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'"

@@ -198,7 +198,7 @@ local function set_keymap()
 		python_terminal_default:toggle()
 	end
 
-	if not vim.fn.has("win64") then
+	if vim.fn.has("win64") == 0 then
 		map("n", "<A-d>", ":lua _python_term_toggle()<CR>", option)
 		map("t", "<A-d>", "<C-\\><C-n>:lua _python_term_toggle()<CR>", option)
 	end
@@ -242,7 +242,7 @@ local function set_keymap()
 		end
 	end
 
-	if not vim.fn.has("win64") then
+	if vim.fn.has("win64") == 0 then
 		map("n", "<leader>db", ":lua _send_line_to_ipython('n')<CR>", option)
 		map("v", "<leader>db", ":'<,'>lua _send_line_to_ipython('v')<CR>", option)
 	end
