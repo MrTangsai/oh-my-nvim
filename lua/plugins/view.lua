@@ -76,6 +76,10 @@ return {
 		"akinsho/bufferline.nvim",
 		version = "v4.1.0",
 		dependencies = "nvim-tree/nvim-web-devicons",
+		keys = {
+			{ "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete buffers to the right" },
+			{ "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>",  desc = "Delete buffers to the left" },
+		},
 		config = function()
 			require("plugins/bufferline/config")()
 		end,
